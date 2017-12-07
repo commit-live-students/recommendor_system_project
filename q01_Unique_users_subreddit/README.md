@@ -10,12 +10,13 @@ Hello folks, this assignment will be comprising of intial data exploration part 
 
 | Parameter | dtype | argument type | default value | description |
 | --- | --- | --- | --- | --- | 
-| data | DataFrame | compulsory |  | subreddit interaction dataset |
+| path | str | compulsory |  | file path of the subreddit interaction dataset |
 
 
 ### Returns:
 
 | Return | dtype | description |
 | --- | --- | --- |
+| data | pandas dataframe | subreddit dataset |
 | variable1 | int | total no. of unique reddit users |
 | variable2 | int | total no. of unique subreddits  |
