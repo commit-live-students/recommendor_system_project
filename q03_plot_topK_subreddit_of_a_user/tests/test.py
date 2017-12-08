@@ -1,6 +1,6 @@
 import unittest
 from inspect import getargspec
-from build import q03_plot_topK_subreddit_of_a_user as student
+from ..build import q03_plot_topK_subreddit_of_a_user as student
 from greyatomlib.recommendor_system_project.q03_plot_topK_subreddit_of_a_user.build import q03_plot_topK_subreddit_of_a_user as original
 import dill
 import pandas as pd

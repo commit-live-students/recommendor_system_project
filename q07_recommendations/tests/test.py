@@ -1,6 +1,6 @@
 import unittest
 from inspect import getargspec
-from build import q07_recommendations as student
+from ..build import q07_recommendations as student
 from greyatomlib.recommendor_system_project.q07_recommendations.build import q07_recommendations as original
 from sklearn.metrics.pairwise import cosine_similarity
 import dill

@@ -1,6 +1,6 @@
 import unittest
 from inspect import getargspec
-from build import q02_top_subreddits_wordcloud as student
+from ..build import q02_top_subreddits_wordcloud as student
 from greyatomlib.recommendor_system_project.q02_top_subreddits_wordcloud.build import q02_top_subreddits_wordcloud as original
 import dill
 import pandas as pd

@@ -1,6 +1,6 @@
 import unittest
 from inspect import getargspec
-from build import q04_weightage as student
+from ..build import q04_weightage as student
 from greyatomlib.recommendor_system_project.q04_weightage.build import q04_weightage as original
 import dill
 import pandas as pd
