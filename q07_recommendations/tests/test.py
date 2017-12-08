@@ -18,7 +18,7 @@ class Testing(unittest.TestCase):
             self.student_func = dill.load(f)
         with open('test_sol.pkl', 'rb') as f:
             self.solution_func = dill.load(f)
-        self.data = 'data/reddit_data.csv'
+        self.data = 'data/subreddit-interactions-for-25000-users.zip'
         self.student_return = self.student_func(self.data)
         self.original_return = self.solution_func(self.data)
 
