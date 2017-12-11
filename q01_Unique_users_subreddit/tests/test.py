@@ -32,7 +32,7 @@ class Testing(unittest.TestCase):
 
     
     def test_return_dataframe(self):
-        assert_frame_equal(self.student_return[0], self.original_return[0],
+        self.assertEqual(self.student_return[0].shape, self.original_return[0].shape,
                            obj="The return values do not match expected values")
 
     def test_return(self):
