@@ -1,23 +1,22 @@
 import unittest
 from inspect import getargspec
-from ..build import q04_weightage as student
-from greyatomlib.recommendor_system_project.q04_weightage.build import q04_weightage as original
+from ..build import q03_plot_topK_subreddit_of_a_user as student
+from greyatomlib.recommendor_system_project.q03_plot_topK_subreddit_of_a_user.build import q03_plot_topK_subreddit_of_a_user as original
 import dill
 import pandas as pd
 from pandas.util.testing import assert_frame_equal
 
 
 class Testing(unittest.TestCase):
+
     #  Check the arguements of the function
     def test_recommendor_args(self):
         # Input parameters tests
-        args = getargspec(student).args
-        self.assertEqual(len(args), 1, "Expected argument(s) %d, Given %d" % (1, len(args)))
+        args = getargspec(student)
+        self.assertEqual(len(args[0]), 3, "Expected argument(s) %d, Given %d" % (3, len(args)))
 
+    def test_recommendor_defaults(self):
+        args = getargspec(student)
+        self.assertEqual(args[3], ('kabanossi',14), "Expected default values do not match given default values")
 
-    def test_return_dataframe(self):
-        self.student_func = student
-        self.data = 'data/subreddit-interactions-for-25000-users.zip'
-        self.student_return = self.student_func(self.data)
-        self.assertEqual(self.student_return.shape, (700000, 4),
-                           "The return values do not match expected values")
+   
