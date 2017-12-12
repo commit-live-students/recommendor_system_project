@@ -15,28 +15,15 @@ class Testing(unittest.TestCase):
         args = getargspec(student)
         self.assertEqual(len(args[0]), 1, "Expected argument(s) %d, Given %d" % (1, len(args)))
 
-
-    def test_recommendor_default(self):
-        args = getargspec(student)
-        self.assertEqual(args[3], (None), "Expected default values do not match given default values")
-
     def test_dataframe(self):
         self.student_func = student
         self.data = 'data/subreddit-interactions-for-25000-users.zip'
         self.student_return = self.student_func(self.data)
         self.assertEqual(self.student_return[0].shape, (700000, 3), "The return values is not a DataFrame")
-
-
-
-    def test_return(self):
-        self.student_func = student
-        self.data = 'data/subreddit-interactions-for-25000-users.zip'
-        self.student_return = self.student_func(self.data)
         self.assertEqual(self.student_return[1], 21376, "The return values do not match expected values")
-
-
-    def test_return_2(self):
-        self.student_func = student
-        self.data = 'data/subreddit-interactions-for-25000-users.zip'
-        self.student_return = self.student_func(self.data)
         self.assertEqual(self.student_return[2], 14111, "The return values do not match expected values")
+
+
+
+
+   
