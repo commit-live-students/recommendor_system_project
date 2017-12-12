@@ -36,10 +36,16 @@ class Testing(unittest.TestCase):
 
 
     def test_return_dataframe(self):
-        assert_frame_equal(self.student_return[0], self.original_return[0],
-                           obj="The return values do not match expected values")
+        self.student_func = student
+        self.data = 'data/subreddit-interactions-for-25000-users.zip'
+        self.student_return = self.student_func(self.data)
+        self.assertEqual(self.student_return, (78,78),
+                           "The return values do not match expected values")
 
     def test_return_dataframe(self):
-        assert_frame_equal(self.student_return[1], self.original_return[1],obj="The return values do not match expected values")
-
+        self.student_func = student
+        self.data = 'data/subreddit-interactions-for-25000-users.zip'
+        self.student_return = self.student_func(self.data)
+        self.assertEqual(self.student_return, (33,78),
+                           "The return values do not match expected values")
 

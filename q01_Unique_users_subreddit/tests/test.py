@@ -8,20 +8,6 @@ from pandas.util.testing import assert_frame_equal
 
 
 class Testing(unittest.TestCase):
-    def setUp(self):
-        print('setup')
-        with open('q01_Unique_users_subreddit/tests/user_sol.pkl', 'wb') as f:
-            dill.dump(student, f)
-
-        with open('q01_Unique_users_subreddit/tests/test_sol.pkl', 'wb') as f:
-            dill.dump(original, f)
-        with open('q01_Unique_users_subreddit/tests/user_sol.pkl', 'rb') as f:
-            self.student_func = dill.load(f)
-        with open('q01_Unique_users_subreddit/tests/test_sol.pkl', 'rb') as f:
-            self.solution_func = dill.load(f)
-        self.data = 'data/subreddit-interactions-for-25000-users.zip'
-        self.student_return = self.student_func(self.data)
-        self.original_return = self.solution_func(self.data)
 
     #  Check the arguements of the function
     def test_recommendor_args(self):
@@ -29,21 +15,30 @@ class Testing(unittest.TestCase):
         args = getargspec(student)
         self.assertEqual(len(args[0]), 1, "Expected argument(s) %d, Given %d" % (1, len(args)))
 
+
     def test_recommendor_default(self):
         args = getargspec(student)
         self.assertEqual(args[3], (None), "Expected default values do not match given default values")
 
-    
-    def test_return_dataframe(self):
-        self.assertEqual(self.student_return[0].shape, self.original_return[0].shape,
-                           "The return values do not match expected values")
+    def def test_dataframe(self):
+        self.student_func = student
+        self.data = 'data/subreddit-interactions-for-25000-users.zip'
+        self.student_return = self.student_func(self.data)
+        self.assertEqual(self.student_return[0].shape, (700000, 3), "The return values is not a DataFrame")
+
+
 
     def test_return(self):
-        print('not a tuple')
-        self.assertEqual(self.student_return[1], self.original_return[1], "The return values do not match expected values")
-    
+        self.student_func = student
+        self.data = 'data/subreddit-interactions-for-25000-users.zip'
+        self.student_return = self.student_func(self.data)
+        self.assertEqual(self.student_return[1], 21376, "The return values do not match expected values")
+
+
     def test_return_2(self):
-        print('not a tuple')
-        self.assertEqual(self.student_return[2], self.original_return[2], "The return values do not match expected values")
-  
+        self.student_func = student
+        self.data = 'data/subreddit-interactions-for-25000-users.csv.zip'
+        self.student_return = self.student_func(self.data)
+        self.original_return = self.solution_func(self.data)
+        self.assertEqual(self.student_return[2], 14111, "The return values do not match expected values")
 
