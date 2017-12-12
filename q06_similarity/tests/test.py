@@ -39,13 +39,12 @@ class Testing(unittest.TestCase):
         self.student_func = student
         self.data = 'data/subreddit-interactions-for-25000-users.zip'
         self.student_return = self.student_func(self.data)
-        self.assertEqual(self.student_return, (78,78),
+        self.assertEqual(self.student_return[0].shape, (79,79),
                            "The return values do not match expected values")
 
     def test_return_dataframe(self):
         self.student_func = student
         self.data = 'data/subreddit-interactions-for-25000-users.zip'
         self.student_return = self.student_func(self.data)
-        self.assertEqual(self.student_return, (33,78),
+        self.assertEqual(self.student_return[1].shape, (13,79),
                            "The return values do not match expected values")
-
