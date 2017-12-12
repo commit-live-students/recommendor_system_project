@@ -34,10 +34,10 @@ class Testing(unittest.TestCase):
         args = getargspec(student)
         self.assertEqual(args[3], ('--ANUSTART-',cosine_similarity,'subreddit',5), "Expected default values do not match given default values")
 
-    
 
-   
+
+
     def test_return(self):
         print('not a tuple')
-        self.assertEqual(self.student_return, self.original_return, "The return values do not match expected values")
-
+        my_list = ['TheSimpsons', 'AceAttorney', 'crashbandicoot', 'BanjoKazooie', 'EnoughTrumpSpam']
+        self.assertEqual(self.student_return, my_list, "The return values do not match expected values")
