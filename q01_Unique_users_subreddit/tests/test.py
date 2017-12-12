@@ -20,7 +20,7 @@ class Testing(unittest.TestCase):
         args = getargspec(student)
         self.assertEqual(args[3], (None), "Expected default values do not match given default values")
 
-    def def test_dataframe(self):
+    def test_dataframe(self):
         self.student_func = student
         self.data = 'data/subreddit-interactions-for-25000-users.zip'
         self.student_return = self.student_func(self.data)
