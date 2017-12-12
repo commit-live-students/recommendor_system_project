@@ -37,8 +37,6 @@ class Testing(unittest.TestCase):
 
     def test_return_2(self):
         self.student_func = student
-        self.data = 'data/subreddit-interactions-for-25000-users.csv.zip'
+        self.data = 'data/subreddit-interactions-for-25000-users.zip'
         self.student_return = self.student_func(self.data)
-        self.original_return = self.solution_func(self.data)
         self.assertEqual(self.student_return[2], 14111, "The return values do not match expected values")
-
