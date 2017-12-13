@@ -5,7 +5,6 @@ Hello folks, this assignment will be comprising of intial data exploration part 
 ## Write a function `Unique_users_subreddit()` that:
 * Computes the length of unique users and unique subreddits.
 * First load the *zip* file from the **data** folder using the *read_csv* method of pandas. Use a parameter *compression = "zip"* for the same.
-* Since the dataset is too large, we will be working on only a sample of the entire dataset. Use the **.sample()** method on     the dataframe and set the parameters inside this method as *frac = 0.2* and *random_state=9*.
 * Makes use of `unique` inbuilt function which extracts unique values of subreddits and users. 
 
 ### Parameters:

@@ -5,7 +5,7 @@ This assignment will be comprising of
 ## Write a function `groupby_users_subreddit()` that:
 * Uses the function **q04_weightage()** generated in the previous assignment to create a dataframe.
 * Creates a new dataframe using the **.groupby()** method which groups the sum of the weights according to username and           subreddit.
-* Converts the dtype of **weight** into float32 using the **.astype()** method. 
+* Converts the dtype of **weight** into *float32* using the **.astype()** method. 
 
 ### Parameters:
 
