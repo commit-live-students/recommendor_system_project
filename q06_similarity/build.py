@@ -1,3 +1,4 @@
+# %load q06_similarity/build.py
 
 import pandas as pd
 import numpy as np
@@ -6,7 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from greyatomlib.recommendor_system_project.q05_groupby_users_subreddit.build import q05_groupby_users_subreddit
 
 def q06_similarity(path, kind='subreddit', similarity_function=cosine_similarity):
-    "write your solution here"
+    'write your solution here'
     df = q05_groupby_users_subreddit(path)
     df01 = df.iloc[:100,:]
     matrix= df01.pivot_table(values='weights',columns='subreddit',index='username')
@@ -22,3 +23,6 @@ def q06_similarity(path, kind='subreddit', similarity_function=cosine_similarity
 
 a = q06_similarity('data/subreddit-interactions-for-25000-users.zip')
 print(a)
+
+
+
